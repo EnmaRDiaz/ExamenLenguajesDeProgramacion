@@ -59,20 +59,22 @@
                                         <thead>                                            
                                             <th scope="col" name="nombre">Id</th>
                                             <th scope="col" name="nombre">Nombre</th>
-                                            <th scope="col" name="tipoElectrodomestico">Apellido</th>
                                             <th scope="col" name="precio">Tel&eacute;fono</th>                                            
                                             <th scope="col">Eliminar</th>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                    <td>1</td>                                                    
-                                                    <td>Julio</td>
-                                                    <td>Cortez</td>
-                                                    <td>9999</td>                                                    
-                                                    <td>
-                                                        <a href="#" class="btn btn-danger">Eliminar</a>
-                                                    </td>
-                                                </tr>
+                                            @foreach ($directorios as $directorio)
+                                            <tr>
+                                                <td>{{$directorio->id}}</td>
+                                                <td>{{$directorio->nombre}}</td>
+                                                <td>{{$directorio->apellido}}</td>
+                                                <td>{{$directorio->correo}}</td>
+                                                <td>{{$directorio->telefono}}</td>
+                                                <td>
+                                                    <a href="{{route('directorio.eliminar')}}" class="btn btn-danger">Eliminar</a>
+                                                </td>
+                                            </tr>
+                                            @endforeach
                                         </tbody>
 
                                     

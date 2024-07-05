@@ -37,4 +37,11 @@ class DirectorioController extends Controller
         $directorioAgregar->save();
         return redirect('/directorio');
     }
+    public function buscar (Request $request){
+        $correo = $request->correo;
+        $directorios = directorio::where('correo', $correo);
+        //$contacto = $directorio->where('correo', $correo);
+        //echo $directorio;
+       return view('vercontactos', compact('directorios'));
+    }
 }

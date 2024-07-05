@@ -26,3 +26,5 @@ Route::get('/directorio/verContactos',
 Route::get('/directorio/eliminarDirectorio',
 [DirectorioController::class, 'viewEliminarDirectorio'])->name('directorio.eliminar');
 
+Route::post('/directorio/buscar/resultado',
+[DirectorioController::class, 'buscar'])->name('buscar');
