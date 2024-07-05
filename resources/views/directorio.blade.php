@@ -44,7 +44,7 @@
                                     <a href="{{route('contactos.ver')}}" class="btn btn-info">Ver</a>
                                 </td>
                                 <td>
-                                    <a href="{{route('directorio.eliminar')}}" class="btn btn-danger">Eliminar</a>
+                                    <a href="{{route('directorio.eliminar', $directorio->id)}}" class="btn btn-danger">Eliminar</a>
                                 </td>
                             </tr>
                             @endforeach

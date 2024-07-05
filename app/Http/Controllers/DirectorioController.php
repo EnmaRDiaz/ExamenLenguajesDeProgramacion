@@ -22,8 +22,9 @@ class DirectorioController extends Controller
         return view('buscar');
     }
 
-    public function viewEliminarDirectorio (){
-        return view('eliminar');
+    public function viewEliminarDirectorio ($id){
+        $registro = directorio::find($id);
+        return view('eliminar', compact('registro'));
     }
 
     public function agregarResultadoDir (Request $request){
@@ -38,10 +39,16 @@ class DirectorioController extends Controller
         return redirect('/directorio');
     }
     public function buscar (Request $request){
+        $directorio = directorio::all();
         $correo = $request->correo;
-        $directorios = directorio::where('correo', $correo);
-        //$contacto = $directorio->where('correo', $correo);
-        //echo $directorio;
-       return view('vercontactos', compact('directorios'));
+        $contacto = $directorio->where('correo', $correo);
+        echo $contacto;
+        //return view('vercontactos', compact('contacto'));
+    }
+
+    public function borrar ($id){
+        $directorio = directorio::find($id);
+        $directorio->delete();
+        return redirect('/directorio');
     }
 }

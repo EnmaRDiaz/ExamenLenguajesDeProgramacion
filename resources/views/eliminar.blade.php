@@ -28,11 +28,11 @@
             </thead>
             <tbody>                
                 <tr>
-                    <th scope="row">11</th>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>jdoe@gmail.com</td>
-                    <td>999</td>
+                    <th scope="row">{{$registro->codigoEntrada}}</th>
+                    <td>{{$registro->nombre}}</td>
+                    <td>{{$registro->apellido}}</td>
+                    <td>{{$registro->correo}}</td>
+                    <td>{{$registro->telefono}}</td>
                   </tr>
                 
               
@@ -44,7 +44,7 @@
         </div>
         <div class="modal-footer">
           <a href="{{route('home')}}" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</a>          
-          <a href="#" class="btn btn-danger" data-bs-dismiss="modal">Confirmar</a>          
+          <a href="{{route('borrar', $registro->id)}}" class="btn btn-danger" data-bs-dismiss="modal">Confirmar</a>          
         </div>
       </div>
     </div>

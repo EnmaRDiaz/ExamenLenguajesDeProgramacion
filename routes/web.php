@@ -23,8 +23,11 @@ Route::get('/directorio/buscar',
 Route::get('/directorio/verContactos',
 [ContactoController::class, 'viewVerContactos'])->name('contactos.ver');
 
-Route::get('/directorio/eliminarDirectorio',
+Route::get('/directorio/eliminarDirectorio/{id}',
 [DirectorioController::class, 'viewEliminarDirectorio'])->name('directorio.eliminar');
 
 Route::post('/directorio/buscar/resultado',
 [DirectorioController::class, 'buscar'])->name('buscar');
+
+Route::get('/directorio/borrar/{id}',
+[DirectorioController::class, 'borrar'])->name('borrar');
