@@ -25,3 +25,4 @@ Route::get('/directorio/verContactos',
 
 Route::get('/directorio/eliminarDirectorio',
 [DirectorioController::class, 'viewEliminarDirectorio'])->name('directorio.eliminar');
+
